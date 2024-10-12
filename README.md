@@ -3,6 +3,8 @@
 ## 1. Placeholder
 You can change the placeholder by passing it as a string. By default, it has the value "Select one item.
 
+![image](https://github.com/user-attachments/assets/c6bd8e43-32fb-4c29-91df-539d77ded808)
+
 ## 2. DefaultValue
 It is optional and used to pre-select the items in the dropdown by default. It accepts the Item[] type.
 
