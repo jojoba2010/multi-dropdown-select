@@ -10,6 +10,7 @@ interface Props {
   placeholder?: string;
   items: Item[];
   onChange?: (selected: Item[]) => void;
+  onNewItemAdded?: (selected: Item[]) => void;
   defaultValue?: Item[];
   maxWidthSelectedItem?: number
   width?:number
@@ -20,6 +21,7 @@ const DropDown = (props: Props) => {
     placeholder = "Select one item",
     items = [],
     onChange,
+    onNewItemAdded,
     defaultValue,
     maxWidthSelectedItem = 300,
     width=500
@@ -46,6 +48,9 @@ const DropDown = (props: Props) => {
 useEffect(() => {
     if (onChange) onChange(selectedItems);
   }, [selectedItems]);
+useEffect(() => {
+    if(onNewItemAdded) onNewItemAdded(allItems)
+  }, [allItems]);
   useEffect(() => {
     setItemsToShow(
       allItems.filter((item) =>
