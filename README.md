@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+#Feature : 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##1. Placeholder
+Here, you can change the placeholder by passing it as a string. By default, it has the value "Select one item.
 
-## Available Scripts
+##2. DefaultValue
+It is optional and used to pre-select the items in the dropdown by default. It accepts the Item[] type.
 
-In the project directory, you can run:
+##3. OnChange
+It is optional, will fire when any selection changes in the dropdown list, and will pass the selected items with the Item[] type. 
 
-### `npm start`
+##4. OnNewItemAdded
+It is optional, will fire when any new item is added to the dropdown list, and will pass the all items with the Item[] type. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##5. Width
+It will set the width of the dropdown main container, it is optional and the default value is 500px.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##6. MaxWidthSelectedItem
+It will set the max width of the selected item width in the dropdown main container, it is optional and the default value is 300px.
+  ###note1: If selected items reach the maxWidthSelectedItem then it will show the number of items that are selected but not have the width to show them. check the image for a better understanding.
+  
+![image](https://github.com/user-attachments/assets/d85c1466-3220-4f0b-91d2-a13b3926f565)
 
-### `npm test`
+##7.Items
+It's the list of all items in the list with the Item[] type.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##8. Remove all selected items at once
+By clicking on this icon you can remove all selected items at once.
 
-### `npm run build`
+![image](https://github.com/user-attachments/assets/c8f047e6-aa00-43a8-9691-e197913ba07b)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##9. Add a new item to the list
+By pressing enter two scenarios will happen first if the item doesn't exist then will be added to the list and by default will be selected as well, the second scenario is if it exists then it will selected.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/user-attachments/assets/1c8d3f44-cee3-4724-bfa8-22047e622c2a)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##10.Remove a single item for selection
+You can do it by clicking the close icon side of any selected item or click on the selected item in the list then it will remove the item from the selection list.
 
-### `npm run eject`
+![image](https://github.com/user-attachments/assets/425c8300-5ade-49a6-8f3f-b966afab5ea0)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##11. Item with big size
+If any item in the list has big text then it will show like the one below with 3 dots.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://github.com/user-attachments/assets/08dddc14-004e-4242-a2d7-79a5b1928361)
