@@ -5,7 +5,6 @@ You can change the placeholder by passing it as a string. By default, it has the
 
 ![image](https://github.com/user-attachments/assets/342b33b4-cf98-4397-8a47-410b77c79688)
 
-
 ## 2. DefaultValue
 It is optional and used to pre-select the items in the dropdown by default. It accepts the Item[] type.
 
