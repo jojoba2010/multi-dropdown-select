@@ -30,9 +30,7 @@ const DropDown = (props: Props) => {
   const [showDropdownList, setShowDropdownList] = useState(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>("");
-  const allItems=useMemo(() => {        
-        return [...items]
-    }, [items])
+  const allItems = useMemo(() => [...items], [items])
   const [itemsToShow, setItemsToShow] = useState<Item[]>(items);
   const [selectedItems, setSelectedItems] = useState<Item[]>(defaultValue||[]);
   useEffect(() => {
@@ -117,8 +115,10 @@ const DropDown = (props: Props) => {
         const newItem = { label: searchText, value: searchText };
         setSelectedItems((prevItems) => [...prevItems, currentItem||newItem]);
         if(!currentItem)
+        { 
           allItems.push(newItem)
-          if(onNewItemAdded) onNewItemAdded(newItem,allItems)    
+          if(onNewItemAdded) onNewItemAdded(newItem,allItems) 
+        }   
       }
       setSearchText("");
     }
