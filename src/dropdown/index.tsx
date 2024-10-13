@@ -10,7 +10,7 @@ interface Props {
   placeholder?: string;
   items: Item[];
   onChange?: (selected: Item[]) => void;
-  onNewItemAdded?: (selected: Item[]) => void;
+  onNewItemAdded?: (newItem: Item, allItems: Item[]) => void;
   defaultValue?: Item[];
   maxWidthSelectedItem?: number
   width?:number
@@ -30,7 +30,9 @@ const DropDown = (props: Props) => {
   const [showDropdownList, setShowDropdownList] = useState(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>("");
-  const [allItems, setAllItems] = useState<Item[]>(items);
+  const allItems=useMemo(() => {        
+        return [...items]
+    }, [items])
   const [itemsToShow, setItemsToShow] = useState<Item[]>(items);
   const [selectedItems, setSelectedItems] = useState<Item[]>(defaultValue||[]);
   useEffect(() => {
@@ -48,9 +50,6 @@ const DropDown = (props: Props) => {
 useEffect(() => {
     if (onChange) onChange(selectedItems);
   }, [selectedItems]);
-useEffect(() => {
-    if(onNewItemAdded) onNewItemAdded(allItems)
-  }, [allItems]);
   useEffect(() => {
     setItemsToShow(
       allItems.filter((item) =>
@@ -120,7 +119,8 @@ const getTextWidth = (text:string) => {
         const newItem = { label: searchText, value: searchText };
         setSelectedItems((prevItems) => [...prevItems, currentItem||newItem]);
         if(!currentItem)
-          setAllItems((prevItems) => [...prevItems, newItem]);      
+          allItems.push(newItem)
+          if(onNewItemAdded) onNewItemAdded(newItem,allItems)    
       }
       setSearchText("");
     }

@@ -35,8 +35,8 @@ function App() {
   const onChangeDropdown=slectedValues=>{
     console.log('slectedValues##', slectedValues)
   }
-  const onNewItemAdded=allItems=>{
-    console.log('All items##', allItems)
+  const onNewItemAdded=(newItem, allItems)=>{
+    console.log('newItem##',newItem,'All items##' ,allItems)
   }
   return (
     <div style={{margin: 0,maxWidth:500,marginLeft:200,marginTop:200}}>
