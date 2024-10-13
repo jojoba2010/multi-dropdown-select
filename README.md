@@ -18,7 +18,6 @@ It is optional, will fire when any new item is added to the dropdown list, and w
 
 ## 5. Width
 It will set the width of the dropdown main container, it is optional and the default value is 500px.
-
 ![image](https://github.com/user-attachments/assets/ecba0fe1-ba40-4b5d-b6eb-efa3b834cbe8)
 
 ## 6. MaxWidthSelectedItem
