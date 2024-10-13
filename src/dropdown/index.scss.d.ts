@@ -1,6 +1,7 @@
 declare const styles: {
   readonly "as-label": string;
   readonly "display-none": string;
+  readonly "img": string;
   readonly "select-arrow": string;
   readonly "select-arrow-container": string;
   readonly "select-arrow-down": string;
@@ -13,11 +14,9 @@ declare const styles: {
   readonly "select-item-options": string;
   readonly "select-item-options-container": string;
   readonly "select-item-options-disabled": string;
-  readonly "select-item-options-icon": string;
   readonly "select-item-options-selected": string;
   readonly "select-selection-item": string;
   readonly "select-selection-overflow-item": string;
-  readonly "select-selection-search": string;
   readonly "x-arrow": string;
 };
 export = styles;

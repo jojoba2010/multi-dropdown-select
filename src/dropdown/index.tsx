@@ -157,7 +157,6 @@ const DropDown = (props: Props) => {
             </div>
             </div>
             <input
-              className={styles["select-selection-search"]}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               onChange={onSearchChange}
@@ -207,7 +206,7 @@ const DropDown = (props: Props) => {
               onClick={() => selectItemHandler(item)}
             >
               <span>{item.label}</span>
-              <img src={item.icon} className={styles["select-item-options-icon"]}/>
+              <img src={item.icon}/>
               {isSelectedItem && (
                 checkMarkSvg
               )}
