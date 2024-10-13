@@ -111,22 +111,16 @@ const getTextWidth = (text:string) => {
       const isTitleExists = selectedItems.some(
         (selectedItem) =>
           selectedItem.label.toLowerCase() === searchText.toLowerCase()
-      );
-      const newItem = { label: searchText, value: searchText };
+      );      
       if (!isTitleExists) {
-        setAllItems((prevItems) => [...prevItems, newItem]);
-        setSelectedItems((prevItems) => [...prevItems, newItem]);
-      } else if (
-        !selectedItems.find(
-          (item) => item.label.toLowerCase() === searchText.toLowerCase()
-        )
-      ) {
-        setSelectedItems((prevItems) => [
-          ...prevItems,
-          allItems.find(
-            (item) => item.label.toLowerCase() === searchText.toLowerCase()
-          ),
-        ]);
+        const currentItem = allItems.find(
+        (allItem) =>
+          allItem.label.toLowerCase() === searchText.toLowerCase()
+        );
+        const newItem = { label: searchText, value: searchText };
+        setSelectedItems((prevItems) => [...prevItems, currentItem||newItem]);
+        if(!currentItem)
+          setAllItems((prevItems) => [...prevItems, newItem]);      
       }
       setSearchText("");
     }
