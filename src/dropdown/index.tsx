@@ -36,7 +36,7 @@ const DropDown = (props: Props) => {
   const [itemsToShow, setItemsToShow] = useState<Item[]>(items);
   const [selectedItems, setSelectedItems] = useState<Item[]>(defaultValue||[]);
   useEffect(() => {
-    const clickOutsideHandler = e => {
+    const clickOutsideHandler = (e: any) => {
       if (
         selectFieldRef.current &&
         !selectFieldRef.current.contains(e.target)
@@ -47,7 +47,7 @@ const DropDown = (props: Props) => {
     document.addEventListener("mousedown", clickOutsideHandler);
     return () => document.removeEventListener("mousedown", clickOutsideHandler);
   }, []);
-useEffect(() => {
+  useEffect(() => {
     if (onChange) onChange(selectedItems);
   }, [selectedItems]);
   useEffect(() => {
@@ -67,33 +67,31 @@ useEffect(() => {
         : [...prevItems, item]
     );
   };
-const getTextWidth = (text:string) => {
-        const canvas = document.createElement('canvas')
-        const context = canvas.getContext('2d')
-        context.font = `14px Arial`
-        const width = context.measureText(text).width
-        return width
-    }
+  const getTextWidth = (text:string) => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+    context.font = `14px Arial`
+    const width = context.measureText(text).width
+    return width
+  }
   const getSelectedItemToShow =useMemo(() => {
-        const selectedItem = selectedItems?.reduce(
-            (acc, item) => {
-                const itemWidth = getTextWidth(item.label) + 30
-                if (acc.totalWidth + itemWidth <= maxWidthSelectedItem) {
-                    acc.selectedItem.push(item)
-                    acc.totalWidth += itemWidth
-                }
-                return acc
-            },
-            { selectedItem: [], totalWidth: 0 }
-        ).selectedItem
-        return selectedItem
-    }, [selectedItems])
-
-    const getNotShowItems = useMemo(
-        () => (selectedItems.length || 0) - (getSelectedItemToShow?.length || 0),
-        [getSelectedItemToShow, selectedItems]
-    )
-  
+    const selectedItem = selectedItems?.reduce(
+      (acc, item) => {
+        const itemWidth = getTextWidth(item.label) + 30
+        if (acc.totalWidth + itemWidth <= maxWidthSelectedItem) {
+            acc.selectedItem.push(item)
+            acc.totalWidth += itemWidth
+        }
+        return acc
+      },
+      { selectedItem: [], totalWidth: 0 }
+    ).selectedItem
+    return selectedItem
+  }, [selectedItems])
+  const getNotShowItems = useMemo(
+    () => (selectedItems.length || 0) - (getSelectedItemToShow?.length || 0),
+    [getSelectedItemToShow, selectedItems]
+  )  
   const dropdownHandler = () => {
     setShowDropdownList((prevState) =>
       prevState === false ? true : prevState
