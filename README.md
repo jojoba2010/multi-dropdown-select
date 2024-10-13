@@ -15,7 +15,7 @@ It is optional and used to pre-select the items in the dropdown by default. It a
 It is optional, will fire when any selection changes in the dropdown list, and will pass the selected items with the Item[] type. 
 
 ## 4. OnNewItemAdded
-It is optional, will fire when any new item is added to the dropdown list, and will pass all items with the Item[] type. 
+It is optional, will fire when any new item is added to the dropdown list, and will pass a new item with Item type as the first argument and the second argument will be all items with the Item[] type. 
 
 ## 5. Width
 It will set the width of the dropdown main container, it is optional and the default value is 500px.
