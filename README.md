@@ -5,7 +5,6 @@ You can change the placeholder by passing it as a string. By default, it has the
 
 ![image](https://github.com/user-attachments/assets/342b33b4-cf98-4397-8a47-410b77c79688)
 
-
 ## 2. DefaultValue
 It is optional and used to pre-select the items in the dropdown by default. It accepts the Item[] type.
 
@@ -19,7 +18,6 @@ It is optional, will fire when any new item is added to the dropdown list, and w
 
 ## 5. Width
 It will set the width of the dropdown main container, it is optional and the default value is 500px.
-
 ![image](https://github.com/user-attachments/assets/ecba0fe1-ba40-4b5d-b6eb-efa3b834cbe8)
 
 ## 6. MaxWidthSelectedItem
